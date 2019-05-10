@@ -83,16 +83,16 @@
                     .then((resp) => resp.json()) // Transform the data into json
                     .then(function(data) {
                         var devElement = document.getElementById('dev_data');
-                        devElement.innerText = JSON.stringify(data)
+                        devElement.innerText = JSON.stringify(data);
 
                         var nameElem = document.getElementById('name');
                         nameElem.innerText = data.username;
                                                 
-                        var levelElem = document.getElementById('level');
+                        /*var levelElem = document.getElementById('level');
                         levelElem.innerText = data.progression.level;
 
                         var cardTitleElem = document.getElementById('card_title');
-                        cardTitleElem.style.background = "https://ubisoft-avatars.akamaized.net/"+data.ubisoft_id+"/default_146_146.png";
+                        cardTitleElem.style.background = "https://ubisoft-avatars.akamaized.net/"+data.ubisoft_id+"/default_146_146.png";*/
 
                         document.querySelector('#p1').addEventListener('mdl-componentupgraded', function() {
                             this.MaterialProgress.setProgress(44);
