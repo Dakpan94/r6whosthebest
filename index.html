@@ -35,28 +35,21 @@
 
        </div>
         <script>
-
+            get_widget();
+            
             document.addEventListener('DOMContentLoaded', () => {
                 setInterval(() => {
-                    fetch('https://r6statsstreamwidget.azurewebsites.net/api/GetStats?code=MtAFC51k4PPlx6C7UrPns6R%2Fqzy%2F8Jw4xCqqv3FhwFoYUaT0xF0IKA%3D%3D&platform=pc&username=efg-dakpan')
-                    .then((resp) => resp.json()) // Transform the data into json
-                    .then(function(data) {
-                        var elem = document.getElementById('app');
-                        elem.innerHTML = response;
-                    })
+                    getwidget();
                 }, 25000)
                 })
 
             function get_widget(){
-                var feedback = $.ajax({
-                    type: "GET",
-                    url: "",
-                    async: false
-                }).success(function(){
-                    setTimeout(function(){get_widget();}, 10000);
-                }).responseText;
-
-                $('#app').html(feedback);
+                fetch('https://r6statsstreamwidget.azurewebsites.net/api/GetStats?code=MtAFC51k4PPlx6C7UrPns6R%2Fqzy%2F8Jw4xCqqv3FhwFoYUaT0xF0IKA%3D%3D&platform=pc&username=efg-dakpan')
+                    .then((resp) => resp.json()) // Transform the data into json
+                    .then(function(data) {
+                        var elem = document.getElementById('app');
+                        elem.innerHTML = response;
+                    });
             }
         </script>
     </body>
