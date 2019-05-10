@@ -53,7 +53,7 @@
             <div class="demo-card-wide mdl-card mdl-shadow--2dp">
                 <div class="mdl-card__title" id="card_title">
                     <span class="mdl-badge" id="level" data-badge="250">
-                    <h2 class="mdl-card__title-text" id="name">EFG-Dakpan [EU]</h2>
+                        <h2 class="mdl-card__title-text" id="name">EFG-Dakpan [EU]</h2>
                     </span>
                     <img src="https://r6stats.com/img/logos/r6stats-250.png" width="50" height="50" style="float: right;"/>
                 </div>
@@ -64,7 +64,10 @@
                     <h5>MMR: 4200</h5>
                     <div id="p1" class="mdl-progress mdl-js-progress"></div>        
                 </div>
-                </div>
+            </div>
+       </div>
+       <div id="dev_data">
+
        </div>
         <script>
             get_widget();
@@ -79,6 +82,9 @@
                 fetch('https://r6statsstreamwidget.azurewebsites.net/api/GetStats?code=MtAFC51k4PPlx6C7UrPns6R%2Fqzy%2F8Jw4xCqqv3FhwFoYUaT0xF0IKA%3D%3D&platform=pc&username=efg-dakpan')
                     .then((resp) => resp.json()) // Transform the data into json
                     .then(function(data) {
+                        var devElement = document.getElementById('dev_data');
+                        devElement.innerText = JSON.stringify(data)
+
                         var nameElem = document.getElementById('name');
                         nameElem.innerText = data.username;
                                                 
