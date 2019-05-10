@@ -30,7 +30,7 @@
         <title>R6Stats stream widget</title>
 
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.deep_orange-amber.min.css">
         <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     
         <!-- Wide card with share menu button -->
@@ -51,24 +51,20 @@
     <body>	
        <div id="app">           
             <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-                <div class="mdl-card__title">
-                    <h2 class="mdl-card__title-text" id="name">Name</h2>
+                <div class="mdl-card__title" id="card_title">
+                    <span class="mdl-badge" id="level" data-badge="250">
+                    <h2 class="mdl-card__title-text" id="name">EFG-Dakpan [EU]</h2>
+                    </span>
+                    <img src="https://r6stats.com/img/logos/r6stats-250.png" width="50" height="50" style="float: right;"/>
                 </div>
-                <div class="mdl-card__supporting-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Mauris sagittis pellentesque lacus eleifend lacinia...
+                <div class="mdl-card__supporting-text" id="card_body">     
+                    <h5>WL: 3 - 0 (3.0)</h5>   
+                    <h5>KD: 25 - 3 (3.6)</h5>    
+                    <h5>Rank: Platinum 3</h5>  
+                    <h5>MMR: 4200</h5>
+                    <div id="p1" class="mdl-progress mdl-js-progress"></div>        
                 </div>
-                <div class="mdl-card__actions mdl-card--border">
-                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                        Get Started
-                    </a>
                 </div>
-                <div class="mdl-card__menu">
-                    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                        <i class="material-icons">share</i>
-                    </button>
-                </div>
-            </div>
        </div>
         <script>
             get_widget();
@@ -85,6 +81,17 @@
                     .then(function(data) {
                         var nameElem = document.getElementById('name');
                         nameElem.innerText = data.username;
+                        
+                        
+                        var nameElem = document.getElementById('level');
+                        nameElem.innerText = data.progression.level;
+
+                        var cardTitleElem = document.getElementById('card_title');
+                        cardTitleElem.style.background = "https://ubisoft-avatars.akamaized.net/"+ubisoft_id+"/default_146_146.png";
+
+                        document.querySelector('#p1').addEventListener('mdl-componentupgraded', function() {
+                            this.MaterialProgress.setProgress(44);
+                        });
                 });
             }
         </script>
