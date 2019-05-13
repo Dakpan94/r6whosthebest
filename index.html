@@ -40,12 +40,12 @@
             }
 
             .demo-card-wide.mdl-card {
-                width: 512px;
+                width: 384px;
             }
 
             .demo-card-wide > .mdl-card__title {
                 color: #fff;
-                height: 176px;
+                height: 117px;
                 background: url('https://cdn.r6stats.com/bank.jpg') center / cover;
             }
             
@@ -61,12 +61,11 @@
                     <span class="mdl-badge" id="level" data-badge="250">
                         <h2 class="mdl-card__title-text" id="name">EFG-Dakpan [EU]</h2>
                     </span>
-                    <img src="https://r6stats.com/img/logos/r6stats-250.png" width="50" height="50" style="float: right;"/>
+                    <img src="https://cdn.r6stats.com/seasons/ranks/unranked.svg" width="50" height="50" style="padding-left:75px;" id="rank_image"/>
                 </div>
                 <div class="mdl-card__supporting-text" id="card_body">     
                     <h5>WL: 3 - 0 (3.0)</h5>   
                     <h5>KD: 25 - 3 (3.6)</h5>    
-                    <h5>Rank: Platinum 3</h5>  
                     <h5>MMR: 4200</h5>
                     <div id="p1" class="mdl-progress mdl-js-progress"></div>        
                 </div>
@@ -82,7 +81,24 @@
             })
 
             function get_widget(){
-                fetch('https://r6statsstreamwidget.azurewebsites.net/api/GetStats?code=MtAFC51k4PPlx6C7UrPns6R%2Fqzy%2F8Jw4xCqqv3FhwFoYUaT0xF0IKA%3D%3D&platform=pc&username=efg-dakpan')
+                fetch('https://r6statsstreamwidget.azurewebsites.net/api/GetGenericStats?code=oLhpAqRTdm0vH7u0OSCmPygLxUHAlc4xKpSiVJB6xTxpBxhzPZt2hg%3D%3D&platform=pc&username=efg-dakpan')
+                    .then((resp) => resp.json()) // Transform the data into json
+                    .then(function(data) {
+                        var nameElem = document.getElementById('name');
+                        nameElem.innerText = data.username;
+                                                
+                        var levelElem = document.getElementById('level');
+                        levelElem.setAttribute('data-badge', data.progression.level);
+
+                        var cardTitleElem = document.getElementById('card_title');
+                        cardTitleElem.style.background = "https://ubisoft-avatars.akamaized.net/"+data.ubisoft_id+"/default_146_146.png";
+
+                        document.querySelector('#p1').addEventListener('mdl-componentupgraded', function() {
+                            this.MaterialProgress.setProgress(44);
+                        });
+                });
+
+                fetch('https://r6statsstreamwidget.azurewebsites.net/api/GetSeasonalStats?code=oLhpAqRTdm0vH7u0OSCmPygLxUHAlc4xKpSiVJB6xTxpBxhzPZt2hg%3D%3D&platform=pc&username=efg-dakpan')
                     .then((resp) => resp.json()) // Transform the data into json
                     .then(function(data) {
                         var nameElem = document.getElementById('name');
