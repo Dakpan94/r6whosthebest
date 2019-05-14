@@ -1,120 +1,67 @@
 ﻿﻿<!DOCTYPE html>
 <html lang="nl">
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="R6Stats streamwidget">
-        <meta name="author" content="Dakpan#6955">
-        <link rel="shortcut icon" href="/images/favicon.png">
-        
-        <link rel="apple-touch-icon" sizes="57x57" href="/images/apple-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="/images/apple-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="/images/apple-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="/images/apple-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="/images/apple-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="/images/apple-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png">
-        <link rel="icon" type="image/png" sizes="192x192"  href="/images/android-icon-192x192.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
-        <meta name="msapplication-TileColor" content="#ffffff">
-        <meta name="msapplication-TileImage" content="../images/ms-icon-144x144.png">
-        <meta name="theme-color" content="#ffffff">
-        <meta name="robots" content="index, follow" />
 
-        <title>R6Stats stream widget</title>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="R6Stats streamwidget">
+    <meta name="author" content="Dakpan#6955">
+    <link rel="shortcut icon" href="/images/favicon.png">
 
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.deep_orange-amber.min.css">
-        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    
-        <!-- Wide card with share menu button -->
-        <style>
-            body {
-                background: url('https://i.ytimg.com/vi/G7Fj2Uyrpeo/maxresdefault.jpg') center / cover;
-            }
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../images/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="robots" content="index, follow" />
 
-            .demo-card-wide.mdl-card {
-                width: 384px;
-            }
+    <title>R6Stats stream widget</title>
 
-            .demo-card-wide > .mdl-card__title {
-                color: #fff;
-                height: 117px;
-                background: url('https://cdn.r6stats.com/bank.jpg') center / cover;
-            }
-            
-            .demo-card-wide > .mdl-card__menu {
-                color: #fff;
-            }
-        </style>
-    </head>
-    <body>	
-       <div id="app">           
-            <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-                <div class="mdl-card__title" id="card_title">
-                    <span class="mdl-badge" id="level" data-badge="250">
-                        <h2 class="mdl-card__title-text" id="name">EFG-Dakpan [EU]</h2>
-                    </span>
-                    <img src="https://cdn.r6stats.com/seasons/ranks/unranked.svg" width="50" height="50" style="padding-left:75px;" id="rank_image"/>
-                </div>
-                <div class="mdl-card__supporting-text" id="card_body">     
-                    <h5>WL: 3 - 0 (3.0)</h5>   
-                    <h5>KD: 25 - 3 (3.6)</h5>    
-                    <h5>MMR: 4200</h5>
-                    <div id="p1" class="mdl-progress mdl-js-progress"></div>        
-                </div>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.deep_orange-amber.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+
+    <link rel="stylesheet" href="assets/styles/main.css" />
+
+</head>
+
+<body>
+    <div id="app">
+        <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title" id="card_title">
+                <span class="mdl-badge" id="level" v-bind:data-badge="data.progression.level">
+                    <h2 v-if="isLoading" class="mdl-card__title-text" id="name">Loading</h2>
+                    <h2 v-else class="mdl-card__title-text" id="name">{{data.username}}</h2>
+                </span>
+                <img src="https://cdn.r6stats.com/seasons/ranks/unranked.svg" width="50" height="50"
+                    style="padding-left:75px;" id="rank_image" />
             </div>
-       </div>
-        <script>
-            get_widget();
+            <div class="mdl-card__supporting-text" id="card_body">
+                <h5>WL: 3 - 0 (3.10)</h5>
+                <h5>KD: {{data.stats.general.kills}} - {{data.stats.general.deaths}}<span class="mdl-chip"><span
+                            class="mdl-chip__text">{{data.stats.general.kd}}</span>
+                    </span> </h5>
+                <h5>MMR: 4200</h5>
+                <div id="p1" class="mdl-progress mdl-js-progress"></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="assets/scripts/main.js"></script>
+</body>
 
-            document.addEventListener('DOMContentLoaded', () => {
-                setInterval(() => {
-                    get_widget();
-                }, 25000)
-            })
-
-            function get_widget(){
-                fetch('https://r6statsstreamwidget.azurewebsites.net/api/GetGenericStats?code=oLhpAqRTdm0vH7u0OSCmPygLxUHAlc4xKpSiVJB6xTxpBxhzPZt2hg%3D%3D&platform=pc&username=efg-dakpan')
-                    .then((resp) => resp.json()) // Transform the data into json
-                    .then(function(data) {
-                        var nameElem = document.getElementById('name');
-                        nameElem.innerText = data.username;
-                                                
-                        var levelElem = document.getElementById('level');
-                        levelElem.setAttribute('data-badge', data.progression.level);
-
-                        var cardTitleElem = document.getElementById('card_title');
-                        cardTitleElem.style.background = "https://ubisoft-avatars.akamaized.net/"+data.ubisoft_id+"/default_146_146.png";
-
-                        document.querySelector('#p1').addEventListener('mdl-componentupgraded', function() {
-                            this.MaterialProgress.setProgress(44);
-                        });
-                });
-
-                fetch('https://r6statsstreamwidget.azurewebsites.net/api/GetSeasonalStats?code=oLhpAqRTdm0vH7u0OSCmPygLxUHAlc4xKpSiVJB6xTxpBxhzPZt2hg%3D%3D&platform=pc&username=efg-dakpan')
-                    .then((resp) => resp.json()) // Transform the data into json
-                    .then(function(data) {
-                        var nameElem = document.getElementById('name');
-                        nameElem.innerText = data.username;
-                                                
-                        var levelElem = document.getElementById('level');
-                        levelElem.setAttribute('data-badge', data.progression.level);
-
-                        var cardTitleElem = document.getElementById('card_title');
-                        cardTitleElem.style.background = "https://ubisoft-avatars.akamaized.net/"+data.ubisoft_id+"/default_146_146.png";
-
-                        document.querySelector('#p1').addEventListener('mdl-componentupgraded', function() {
-                            this.MaterialProgress.setProgress(44);
-                        });
-                });
-            }
-        </script>
-    </body>
 </html>

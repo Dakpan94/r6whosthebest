@@ -1,0 +1,17 @@
+body {
+    background: url('https://i.ytimg.com/vi/G7Fj2Uyrpeo/maxresdefault.jpg') center / cover;
+}
+
+.demo-card-wide.mdl-card {
+    width: 384px;
+}
+
+.demo-card-wide > .mdl-card__title {
+    color: #fff;
+    height: 117px;
+    background: url('https://cdn.r6stats.com/bank.jpg') center / cover;
+}
+
+.demo-card-wide > .mdl-card__menu {
+    color: #fff;
+}
