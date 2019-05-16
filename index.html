@@ -40,13 +40,16 @@
 
 <body>
     <div id="app">
-        <div class="demo-card-wide mdl-card mdl-shadow--2dp">
-            <div class="mdl-card__title" id="card_title">
-                <h2 v-else class="mdl-card__title-text" id="name">{{data.title}}</h2>
-            </div>
-            <div class="mdl-card__supporting-text" id="card_body">
-                <h5>Who? {{data.username}}</h5>
-                <h5>score: {{data.score}}</h5>
+        <h2 v-if="isLoading" class="mdl-card__title-text" id="name">Loading</h2>
+        <div v-for="entry in data">
+            <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                <div class="mdl-card__title" id="card_title">
+                    <h2 v-else class="mdl-card__title-text" id="name">{{entry.title}}</h2>
+                </div>
+                <div class="mdl-card__supporting-text" id="card_body">
+                    <h5>Who? {{entry.username}}</h5>
+                    <h5>score: {{entry.score}}</h5>
+                </div>
             </div>
         </div>
     </div>
