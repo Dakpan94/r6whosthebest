@@ -1,5 +1,5 @@
 .demo-layout-transparent {
-    background: url('../assets/demos/transparent.jpg') center / cover;
+    background: url('/assets/images/r6.jpg') center / cover;
   }
   .demo-layout-transparent .mdl-layout__header,
   .demo-layout-transparent .mdl-layout__drawer-button {
